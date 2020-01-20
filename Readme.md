@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Роман Сякаев](https://up.htmlacademy.ru/javascript/19/user/1319671).
-* Наставник: `Неизвестно`.
+* Наставник: [Степан Бакшаев] (https://htmlacademy.ru/profile/id1276891)
 
 ---
 
