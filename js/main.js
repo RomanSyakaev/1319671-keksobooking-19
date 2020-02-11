@@ -9,7 +9,6 @@ var randomInteger = function (min, max) {
   return Math.floor(rand);
 };
 
-
 var getRandomElement = function (arr) {
   return arr[randomInteger(0, arr.length - 1)];
 };
@@ -26,7 +25,6 @@ var getRandomLengthArrow = function (arr) {
 
   return newArr;
 };
-
 
 var cards = [{}, {}, {}, {}, {}, {}, {}, {}];
 
