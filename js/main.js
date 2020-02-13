@@ -26,14 +26,14 @@ var getRandomLengthArrow = function (arr) {
   return newArr;
 };
 
-var cards = [{}, {}, {}, {}, {}, {}, {}, {}];
+var cards = [];
 
 var createCards = function () {
-  for (var i = 0; i <= numberOfPins; i++) {
-    cards[i] =
+  for (var i = 0; i < numberOfPins; i++) {
+    var card =
       {
         'author': {
-          'avatar': 'img/avatars/user0' + randomInteger(1, 8) + '.png',
+          'avatar': 'img/avatars/user0' + (i + 1) + '.png',
         },
         'offer': {
           'title': 'Заголовок',
@@ -50,10 +50,12 @@ var createCards = function () {
         },
 
         'location': {
-          'x': randomInteger(130, 630),
+          'x': randomInteger(130, document.body.getClientRects()[0].width),
           'y': randomInteger(130, 630),
         }
       };
+
+    cards.push(card);
   }
 
   return;
@@ -67,11 +69,13 @@ map.classList.remove('map--faded');
 var createPins = function () {
   for (var i = 0; i < numberOfPins; i++) {
     var pin = pinTemplate.cloneNode(true);
+    var OFFSET_COORDINATE_X = 25;
+    var OFFSET_COORDINATE_Y = 25;
 
     pin.querySelector('img').src = cards[i].author.avatar;
     pin.querySelector('img').alt = cards[i].offer.title;
-    pin.style.left = cards[i].location.x + 25 + 'px';
-    pin.style.top = cards[i].location.y + 35 + 'px';
+    pin.style.left = cards[i].location.x + OFFSET_COORDINATE_X + 'px';
+    pin.style.top = cards[i].location.y + OFFSET_COORDINATE_Y + 'px';
 
     pins.appendChild(pin);
   }
